@@ -1,15 +1,15 @@
-import Login from './assets/components/login'
-import { useState } from 'react'
+import Login from "./admin/pages/login";
+import { useState } from "react";
 
 function App() {
-
   return (
-    <> <div>
-      <Login/>
+    <>
+      {" "}
+      <div>
+        <Login />
       </div>
-      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
