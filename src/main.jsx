@@ -6,19 +6,38 @@ import "./index.css";
 import Dashboard from "./admin/pages/dashboard.jsx";
 import Massage from "./admin/pages/massage.jsx";
 import AdminRoot from "./routes/adminRoot.jsx";
+import ErrorPage from "./error-page.jsx";
+import Data from "./admin/pages/data.jsx";
+import Notification from "./admin/pages/notification.jsx";
+import Registration from "./admin/pages/registration.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AdminRoot />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/massage",
-    element: <Massage />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "buildings/:buildingId",
+        element: <Dashboard />,
+      },
+      {
+        path: "data/:Id",
+        element: <Data />,
+      },
+      {
+        path: "massage/:Id",
+        element: <Massage />,
+      },
+      {
+        path: "notification/:Id",
+        element: <Notification />,
+      },
+      {
+        path: "registration/:Id",
+        element: <Registration />,
+      },
+    ],
   },
 ]);
 

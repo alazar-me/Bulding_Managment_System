@@ -2,7 +2,7 @@ import React from "react";
 const Notification = () => {
   return (
     <div>
-      <h1>massage</h1>
+      <h1>notification</h1>
     </div>
   );
 };

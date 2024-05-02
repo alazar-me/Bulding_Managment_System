@@ -2,7 +2,7 @@ import React from "react";
 const Data = () => {
   return (
     <div>
-      <h1>massage</h1>
+      <h1>data</h1>
     </div>
   );
 };
