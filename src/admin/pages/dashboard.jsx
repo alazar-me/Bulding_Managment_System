@@ -1,8 +1,9 @@
 import React from "react";
+import BuldingCard from "../../assets/components/building-card";
 const Dashboard = () => {
   return (
     <div>
-      <h1>dashboard</h1>
+      <BuldingCard />
     </div>
   );
 };
