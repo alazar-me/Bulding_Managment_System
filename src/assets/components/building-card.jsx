@@ -1,4 +1,5 @@
 import React from "react";
+import NewRenterCard from "./add-new-renter-card";
 const buldingCard = () => {
   return (
     <>
@@ -7,6 +8,7 @@ const buldingCard = () => {
         <img className="h-48 w-72" src="/src/assets/images/images.jpg" alt="" />
         <h2 className="p-2 text-gray-500">Jamo</h2>
       </div>
+      <NewRenterCard />
     </>
   );
 };
