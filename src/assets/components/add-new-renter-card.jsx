@@ -1,10 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 const NewRenterCard = () => {
+  const handleClick = () => {
+    navigating("/massage/1");
+  };
+  const navigating = useNavigate();
   return (
     <>
       <div className=" h-64 w-1/3 bg-white drop-shadow-md rounded-2xl font-semibold flex flex-col items-center gap-4 ">
         <h1 className=" mt-16">Add New Renter</h1>
-        <button className="bg-green-500 hover:bg-green-600 text-white font-bold -py-2  h-12 px-4 w-48 rounded-md     items-center">
+        <button
+          onClick={handleClick}
+          className="bg-green-500 hover:bg-green-600 text-white font-bold -py-2  h-12 px-4 w-48 rounded-md     items-center"
+        >
           {/* <svg
             className="fill-current w-4 h-4 ml-32 -mt-0  mr-24"
             xmlns="http://www.w3.org/2000/svg"
