@@ -11,6 +11,7 @@ import Notification from "./admin/pages/notification.jsx";
 import Registration from "./admin/pages/registration.jsx";
 // import Login from "./admin/pages/login.jsx";
 // import SingUp from "./admin/pages/signUp-page.jsx";
+import RenterCard from "./assets/components/renterListCard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   //   path: "signup/",
   //   element: <SingUp />,
   // },
+  {
+    path: "card/",
+    element: <RenterCard />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
