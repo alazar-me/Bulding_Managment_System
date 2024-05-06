@@ -1,5 +1,4 @@
 import * as React from "react";
-import Login from "./admin/pages/login.jsx";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
@@ -10,6 +9,8 @@ import ErrorPage from "./error-page.jsx";
 import Data from "./admin/pages/data.jsx";
 import Notification from "./admin/pages/notification.jsx";
 import Registration from "./admin/pages/registration.jsx";
+// import Login from "./admin/pages/login.jsx";
+// import SingUp from "./admin/pages/signUp-page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,10 +40,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "login",
-    leement: <Login />,
-  },
+  // {
+  //   path: "login/",
+  //   element: <Login />,
+  // },
+  // {
+  //   path: "signup/",
+  //   element: <SingUp />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
