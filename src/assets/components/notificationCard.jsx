@@ -1,5 +1,5 @@
 import React from "react";
-import NewRenterCard from "./add-new-renter-card";
+
 const NotificationCrad = () => {
   return (
     <>

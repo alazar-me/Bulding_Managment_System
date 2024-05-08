@@ -1,6 +1,7 @@
 import React from "react";
 import NewRenterCard from "./add-new-renter-card";
 import NotificationCrad from "./notificationCard";
+import RoomInfoCard from "./room-Info-Card";
 const buldingCard = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const buldingCard = () => {
       </div>
       <NewRenterCard />
       <NotificationCrad />
+      <RoomInfoCard />
     </>
   );
 };
