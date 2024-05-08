@@ -2,7 +2,7 @@ import React from "react";
 const RenterCard = () => {
   return (
     <>
-      <div className=" h-72 w-3/4 bg-white drop-shadow-lg rounded-2xl font-semibold  ">
+      <div className=" h-64 w-auto mr-6 bg-white drop-shadow-lg rounded-2xl font-semibold  ">
         <h2 className=" pt-6 pl-8 -mb-5 ml-16 pb-0 font-medium">
           Total Renters
         </h2>

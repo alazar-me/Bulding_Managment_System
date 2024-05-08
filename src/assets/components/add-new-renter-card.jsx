@@ -8,7 +8,7 @@ const NewRenterCard = () => {
   const navigating = useNavigate();
   return (
     <>
-      <div className=" h-64 w-1/3 bg-white drop-shadow-md rounded-2xl font-semibold flex flex-col items-center gap-4 ">
+      <div className=" h-56 w-2/4 bg-white drop-shadow-lg rounded-2xl font-semibold flex flex-col items-center gap-4 ">
         <h1 className=" mt-16">Add New Renter</h1>
         <button
           onClick={handleClick}

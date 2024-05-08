@@ -3,7 +3,7 @@ import React from "react";
 const NotificationCrad = () => {
   return (
     <>
-      <div className="flex flex-col bg-white drop-shadow-2xl rounded-2xl items-center w-48 h-64 ">
+      <div className="flex flex-col bg-white drop-shadow-lg rounded-2xl items-center w-48 h-56 ">
         <h1 className=" pt-6 font-semibold text-gray-700 text-2xl">New</h1>
         <h1 className=" pt-2 font-semibold text-gray-700 text-2xl">
           Notification
