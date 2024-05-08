@@ -1,5 +1,6 @@
 import React from "react";
 import NewRenterCard from "./add-new-renter-card";
+import NotificationCrad from "./notificationCard";
 const buldingCard = () => {
   return (
     <>
@@ -9,6 +10,7 @@ const buldingCard = () => {
         <h2 className="p-2 text-gray-500">Jamo</h2>
       </div>
       <NewRenterCard />
+      <NotificationCrad />
     </>
   );
 };
