@@ -24,7 +24,7 @@ const BuildingDetailDashboard = () => {
         <div className="h-48 w-auto bg-white  rounded-2xl font-semibold  mr-6">
           <img
             className="h-48 w-full"
-            src="/src/assets/components/Block.png"
+            src="/src/assets/images/Block.png"
             alt=""
           />
         </div>
