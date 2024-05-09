@@ -6,7 +6,10 @@ const Sidebar = () => {
   return (
     <>
       <div className="flex">
-        <div id="" className=" h-screen w-64 bg-white drop-shadow-2xl">
+        <div
+          id=""
+          className=" h-auto w-64 min-h-screen bg-white drop-shadow-2xl"
+        >
           <div className="p-6 pl-12 flex flex-row">
             <img src="src/assets/images/Frame 73.png" alt="" />
             <h1 className="text-green-500 pl-3 pt-2">Your Logo</h1>
