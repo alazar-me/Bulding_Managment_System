@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const NewRenterCard = () => {
   const handleClick = () => {
-    navigating("/massage/1");
+    navigating("/registration/1");
   };
   const navigating = useNavigate();
   return (

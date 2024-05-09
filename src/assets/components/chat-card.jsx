@@ -23,7 +23,7 @@ const ChatCard = () => {
           of denouncing pleasure and praising pain was born and I will give you
           a complete account of the system, and expound the actual teachings...
         </h2>
-        <hr className="border-t-1 border-gray-400" />
+        <hr className="border-t-1 border-green-600" />
         <div className="flex flex-row justify-end gap-2 pb-2 pt-2 mr-4">
           <img src="/src/assets/images/ReactIcon.png" alt="" />
           <h2 className=" font-medium text-gray-800 cursor-pointer">Comment</h2>
