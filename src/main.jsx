@@ -14,6 +14,7 @@ import Registration from "./admin/pages/registration.jsx";
 
 import BuildingDetailDashboard from "./admin/pages/Building-Detail-Dashboard.jsx";
 import UserLandingPage from "./users/pages/user-landing-page.jsx";
+import MassageBox from "./assets/components/massage-box.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
   {
     path: "home/",
     element: <UserLandingPage />,
+    errorElement: <ErrorPage />,
+
+    children: [
+      {
+        path: "report/:Id",
+        element: <MassageBox />,
+      },
+    ],
   },
 
   // {
