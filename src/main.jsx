@@ -13,6 +13,7 @@ import Registration from "./admin/pages/registration.jsx";
 // import SingUp from "./admin/pages/signUp-page.jsx";
 
 import BuildingDetailDashboard from "./admin/pages/Building-Detail-Dashboard.jsx";
+import UserLandingPage from "./users/pages/user-landing-page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         element: <BuildingDetailDashboard />,
       },
     ],
+  },
+  {
+    path: "home/",
+    element: <UserLandingPage />,
   },
 
   // {
