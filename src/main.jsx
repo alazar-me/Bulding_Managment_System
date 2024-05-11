@@ -15,6 +15,7 @@ import Registration from "./admin/pages/registration.jsx";
 import BuildingDetailDashboard from "./admin/pages/Building-Detail-Dashboard.jsx";
 import UserLandingPage from "./users/pages/user-landing-page.jsx";
 import MassageBox from "./assets/components/massage-box.jsx";
+import UserDetailPage from "./admin/pages/user-detail-page.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
         element: <MassageBox />,
       },
     ],
+  },
+  {
+    path: "detail/:Id",
+    element: <UserDetailPage />,
   },
 
   // {
