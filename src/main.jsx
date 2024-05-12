@@ -16,6 +16,9 @@ import BuildingDetailDashboard from "./admin/pages/Building-Detail-Dashboard.jsx
 import UserLandingPage from "./users/pages/user-landing-page.jsx";
 import MassageBox from "./assets/components/massage-box.jsx";
 import UserDetailPage from "./admin/pages/user-detail-page.jsx";
+import ReportIssue from "./users/pages/report_issue.jsx";
+import PaymentPage from "./users/pages/payment.jsx";
+import Checkout from "./assets/components/checkout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,14 +54,22 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "home/",
+    path: "home",
     element: <UserLandingPage />,
     errorElement: <ErrorPage />,
 
     children: [
       {
         path: "report/:Id",
-        element: <MassageBox />,
+        element: <ReportIssue />,
+      },
+      {
+        path: "payment/:Id",
+        element: <PaymentPage />,
+      },
+      {
+        path: "checkout/:Id",
+        element: <Checkout />,
       },
     ],
   },
