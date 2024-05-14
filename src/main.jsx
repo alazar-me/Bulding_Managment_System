@@ -77,6 +77,10 @@ const router = createBrowserRouter([
     path: "detail/:Id",
     element: <UserDetailPage />,
   },
+  {
+    path: "checkout/:Id",
+    element: <Checkout />,
+  },
 
   // {
   //   path: "login/",
