@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import Pay from "./pay";
 import PaymentSuccessMassage from "./PaymentSuccessMassage";
+const generateRandomString = (length) => {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+};
 
+// Generate a random string of length 12 (you can adjust the length as needed)
+const tx_ref = generateRandomString(12);
 const Checkout = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [value, setValue] = useState("");
   const public_key = "CHAPUBK_TEST-Lc2RM6dT1RENLAlcMzcGknc8mX52D4oo";
-  const tx_ref = "ghjagsfsfasrt";
+
   return (
     <>
       <div className="flex  bg-white w-96 drop-shadow-md h-3/4 rounded-lg  border-gray-300 ">
