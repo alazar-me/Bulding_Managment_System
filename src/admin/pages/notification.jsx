@@ -1,8 +1,13 @@
 import React from "react";
+import ChatCard from "../../assets/components/chat-card";
 const Notification = () => {
   return (
-    <div>
-      <h1>notification</h1>
+    <div className="flex flex-col gap-4 pt-5">
+      <ChatCard />
+      <ChatCard />
+      <ChatCard />
+      <ChatCard />
+      <ChatCard />
     </div>
   );
 };
