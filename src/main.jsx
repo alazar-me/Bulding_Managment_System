@@ -9,7 +9,7 @@ import ErrorPage from "./error-page.jsx";
 import Data from "./admin/pages/data.jsx";
 import Notification from "./admin/pages/notification.jsx";
 import Registration from "./admin/pages/registration.jsx";
-// import Login from "./admin/pages/login.jsx";
+import Login from "./admin/pages/login.jsx";
 // import SingUp from "./admin/pages/signUp-page.jsx";
 
 import BuildingDetailDashboard from "./admin/pages/Building-Detail-Dashboard.jsx";
@@ -28,7 +28,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "buildings/:buildingId",
+        index: "true",
+        element: <Dashboard />,
+      },
+      {
+        path: "buildings/Id",
         element: <Dashboard />,
       },
       {
@@ -82,10 +86,10 @@ const router = createBrowserRouter([
     element: <Checkout />,
   },
 
-  // {
-  //   path: "login/",
-  //   element: <Login />,
-  // },
+  {
+    path: "login/",
+    element: <Login />,
+  },
   // {
   //   path: "signup/",
   //   element: <SingUp />,

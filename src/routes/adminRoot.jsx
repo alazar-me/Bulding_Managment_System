@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import BuildingDetailDashboard from "../admin/pages/Building-Detail-Dashboard";
+import Dashboard from "../admin/pages/dashboard";
 
 const Sidebar = () => {
   return (
