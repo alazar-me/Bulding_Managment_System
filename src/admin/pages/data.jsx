@@ -119,29 +119,31 @@
 // export default Data;
 
 //hardcoded data
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-const Data = () => {
+import { Loading } from "../../assets/components/Loading";
+
+const baseUrl = "http://192.168.8.18:3001/api/admin/";
+
+const Data = ({cheight}) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [data, setData] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      age: 30,
-      email: "john@example.com",
-      phoneNumber: "10101010",
-      isActive: false,
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      age: 25,
-      email: "jane@example.com",
-      phoneNumber: "09111111",
-      isActive: true,
-    },
-    // Add more data as needed
-  ]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(baseUrl);
+        const jsonData = await response.json();
+        setData(jsonData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // Handle search query change
   const handleSearchChange = (event) => {
@@ -149,17 +151,17 @@ const Data = () => {
   };
 
   // Filtered data based on search query
-  const filteredData = data.filter(
-    (person) =>
-      person.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      person.phoneNumber.includes(searchQuery)
-  );
+  const filteredData = data.filter((person) => {
+    const nameMatch = person.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const phoneNumberMatch = typeof person.phone_number === 'string' && person.phone_number.includes(searchQuery);
+    return nameMatch || phoneNumberMatch;
+  });
 
   return (
-    <div className="h-auto min-h-screen w-auto ml-5 mr-6 mt-10 bg-white drop-shadow-md rounded-2xl font-semibold">
+    <div className={`${cheight} h-auto  w-auto ml-5 mr-6 mt-10 bg-white drop-shadow-md rounded-2xl font-semibold`}>
       <h2 className="pt-6 pl-8 -mb-5 ml-16 pb-0 font-medium">Total Renters</h2>
       <div className="flex flex-row gap-10 justify-end">
-        <form className="max-w-md w-96 min-w-72 mr-10 ">
+        <form className="max-w-md w-96 min-w-72 mr-10">
           <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -211,17 +213,14 @@ const Data = () => {
                       Name
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Age
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Email
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Phone Number
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Details
-                    </th>
+                    </th> */}
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Status
                     </th>
@@ -229,22 +228,18 @@ const Data = () => {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {/* Map over the filtered data and render table rows */}
-                  {filteredData.map((person) => (
+                  {loading ? <Loading /> : filteredData.map((person) => (
                     <tr key={person.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         {person.name}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        {person.age}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
                         {person.email}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        {person.phoneNumber}
+                        {person.phone_number}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        {/* Update link as needed */}
+                      {/* <td className="px-6 py-4 whitespace-nowrap">
                         <Link to={`/detail/${person.id}`}>
                           <button
                             className="bg-green-500 hover:bg-green-600 text-white font-bold rounded-md px-2 py-1"
@@ -253,9 +248,9 @@ const Data = () => {
                             Details
                           </button>
                         </Link>
-                      </td>
+                      </td> */}
                       <td className="px-6 py-4 whitespace-nowrap">
-                        {person.isActive ? (
+                        {person.status.includes("active") ? (
                           <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                             <span className="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                             Active
@@ -280,28 +275,29 @@ const Data = () => {
 };
 
 export default Data;
+
 // data from the backend
 // import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 
 // const Data = () => {
-//   const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-//   // Fetch data from the database when the component mounts
-//   useEffect(() => {
-//     // Replace this fetch call with your actual API call to fetch data from the database
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch("your_api_endpoint");
-//         const jsonData = await response.json();
-//         setData(jsonData);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//       }
-//     };
+  // // Fetch data from the database when the component mounts
+  // useEffect(() => {
+  //   // Replace this fetch call with your actual API call to fetch data from the database
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("your_api_endpoint");
+  //       const jsonData = await response.json();
+  //       setData(jsonData);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-//     fetchData();
-//   }, []); // Empty dependency array ensures this effect runs only once when the component mounts
+  //   fetchData();
+  // }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
 //   return (
 //     <div className="h-auto min-h-screen w-auto ml-5 mr-6 mt-10 bg-white drop-shadow-md rounded-2xl font-semibold">
