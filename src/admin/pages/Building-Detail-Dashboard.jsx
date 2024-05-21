@@ -4,13 +4,13 @@ import NewRenterCard from "../../assets/components/add-new-renter-card";
 import NotificationCrad from "../../assets/components/notificationCard";
 import RoomInfoCard from "../../assets/components/room-Info-Card";
 import TotalRenterInfoCard from "../../assets/components/total-renter-info-card";
-import Data from "./data";
+import DataForDashboard from "./DataForDashboard";
 const BuildingDetailDashboard = () => {
   return (
     <>
       <div className="flex flex-col gap-4 pl-4 pt-3">
         <div className="flex-col">
-          <Data cheight={""}/>
+          <DataForDashboard/>
           {/* <RenterCard /> */}
         </div>
         <div>

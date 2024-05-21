@@ -91,7 +91,7 @@ const Sidebar = () => {
       <div className="flex">
         <div
           id=""
-          className=" h-auto w-64 min-h-screen bg-white drop-shadow-2xl"
+          className=" h-auto min-w-[250px] min-h-screen bg-white drop-shadow-2xl"
         >
           <div className="p-6 pl-12 flex flex-row">
             <img src="src/assets/images/Frame 73.png" alt="" />
