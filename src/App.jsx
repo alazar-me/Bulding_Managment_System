@@ -1,4 +1,4 @@
-import Login from "./admin/pages/login";
+import Login from "./admin/pages/Login";
 import { useState } from "react";
 
 function App() {
