@@ -4,7 +4,7 @@ import { Loading } from "../../assets/components/Loading";
 
 const baseUrl = "http://192.168.8.18:3001/api/admin/";
 
-const Data = ({cheight}) => {
+const DataForDashboard = ({cheight}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -78,7 +78,6 @@ const Data = ({cheight}) => {
         </form>
 
         <form className="max-w-sm w-40 mr-20 pt-2">
-          {/* Sorting component */}
         </form>
       </div>
       <div className="p-8 ml-6 flex flex-col w-auto h-auto">
@@ -97,17 +96,13 @@ const Data = ({cheight}) => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Phone Number
                     </th>
-                    {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Details
-                    </th> */}
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Status
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {/* Map over the filtered data and render table rows */}
-                  {loading ? <Loading /> : filteredData.map((person) => (
+                  {filteredData.map((person) => (
                     <tr key={person.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         {person.name}
@@ -118,16 +113,6 @@ const Data = ({cheight}) => {
                       <td className="px-6 py-4 whitespace-nowrap">
                         {person.phone_number}
                       </td>
-                      {/* <td className="px-6 py-4 whitespace-nowrap">
-                        <Link to={`/detail/${person.id}`}>
-                          <button
-                            className="bg-green-500 hover:bg-green-600 text-white font-bold rounded-md px-2 py-1"
-                            type="button"
-                          >
-                            Details
-                          </button>
-                        </Link>
-                      </td> */}
                       <td className="px-6 py-4 whitespace-nowrap">
                         {person.status.includes("active") ? (
                           <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
@@ -153,4 +138,4 @@ const Data = ({cheight}) => {
   );
 };
 
-export default Data;
+export default DataForDashboard;

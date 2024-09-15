@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ChatCard = () => {
+const ChatCard = ({_id, userName, sentDate, title, descreption}) => {
   const [isCommenting, setIsCommenting] = useState(false);
   const [comment, setComment] = useState("");
 
@@ -10,31 +10,30 @@ const ChatCard = () => {
 
   const handleSendClick = () => {
     // Handle sending the comment logic here
+
     console.log("Comment sent:", comment);
     setComment("");
     setIsCommenting(false);
   };
 
   return (
-    <div className="ml-6 flex flex-col bg-gray-200 rounded-2xl w-auto mr-6 max-h-[80vh] overflow-y-auto">
+    <div className="ml-6 flex flex-col bg-[#ffffff] border-gray-200 border-2 p-4 rounded-2xl w-auto mr-6 max-h-[80vh] overflow-y-auto">
       <div className="flex flex-row gap-4 pb-2">
         <img
-          className="pl-5 pt-2"
-          src="/src/assets/images/Avatar Goes Here.png"
+          className="pl-5 pt-2 h-14"
+          src="/src/assets/images/avatar.jpg"
           alt="Avatar"
         />
         <h2 className="pt-4 pl-2 text-lg font-semibold text-gray-600">
-          John Mike
+          {userName}
         </h2>
-        <h3 className="pt-4 pl-2 text-gray-500">1 week ago</h3>
+        <h3 className="pt-4 pl-2 text-gray-500">{sentDate}</h3>
       </div>
       <h1 className="pl-2 pb-1 text-2xl font-bold text-black">
-        Lorem Ipsum Lorem Ipsum Lorem Ipsum
+        {title}
       </h1>
       <h2 className="pl-2 pb-5 text-gray-700">
-        Dummy comment - But I must explain to you how all this mistaken idea of
-        denouncing pleasure and praising pain was born and I will give you a
-        complete account of the system, and expound the actual teachings...
+        {descreption}
       </h2>
       <hr className="border-t-1 border-green-600" />
       <div className="flex flex-row justify-end gap-2 pb-2 pt-2 mr-4">
@@ -60,8 +59,9 @@ const ChatCard = () => {
               onChange={(e) => setComment(e.target.value)}
               placeholder="Write your comment..."
             ></textarea>
+            <input type="hidden" value={_id} />
             <button
-              className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md"
+              className="mt-2 bg-green-500 text-white px-4 py-2 rounded-md"
               onClick={handleSendClick}
             >
               Send

@@ -20,13 +20,13 @@ const buldingCard = ({ blgName, location, imgUrl}) => {
     // </>
 
 
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-700 dark:border-gray-700 w-96 h-98 gap-2">
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-[#ffffff] w-96 h-98 gap-2">
           <a href="#">
               <img class="rounded-t-lg w-full h-[250px]" src={imgUrl} alt="" />
           </a>
           <div class="p-5">
               <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{blgName}</h5>
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">{blgName}</h5>
               </a>
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{location}</p>
               <a href="/BuildingDetailDashboard/1" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
